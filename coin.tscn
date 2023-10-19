@@ -58,7 +58,6 @@ animations = [{
 radius = 20.0
 
 [node name="Coin" type="Area2D" groups=["coins"]]
-position = Vector2(69, 50)
 script = ExtResource("1_rqgj0")
 metadata/_edit_group_ = true
 
