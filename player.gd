@@ -12,7 +12,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# Get input for 8-directional movement
 	velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
+	# Move the player's position
 	position += velocity * speed * delta
 	position.x = clamp(position.x, 0, screensize.x)
 	position.y = clamp(position.y, 0, screensize.y)
+	
+	# Choose which animation to play
+	if velocity.length() > 0:
+		$AnimatedSprite2D.animation = 'run'
+	else:
+		$AnimatedSprite2D.animation = 'idle'
+	if velocity.x != 0:
+		$AnimatedSprite2D.flip_h = velocity.x < 0
