@@ -66,6 +66,7 @@ metadata/_edit_group_ = true
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_wma7g")
 animation = &"shine_sparkle"
+autoplay = "shine_sparkle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7cx8t")
